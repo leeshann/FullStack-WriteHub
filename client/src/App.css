@@ -1,0 +1,147 @@
+.inputcontainer {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 20px;
+
+}
+
+.searchbar {
+    width: 400px;
+    height: 50px;
+    border: 2px solid #6366f1;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.buttonCSS {
+    width: 150px;
+    height: 50px;
+    border: 2px solid #6366f1;
+    border-radius: 10px;
+    background-color: #6366f1;
+    color: white;
+    font-size: 20px;
+}
+
+/* POST */
+
+.postcontainer {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: blue; */
+    width: 750px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30px;
+}
+
+.post {
+    background-color: white;
+    height: 140px;
+    border-left: solid 5px #3838c3;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.image-container {
+    width: 200px;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.post-title-container {
+    font-size: xxx-large;
+    height: 100%;
+    width: 100%;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    overflow: hidden;
+}
+
+.post-title-container > h2 {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 35px;
+    color: black;
+}
+
+.post-subtitle {
+    font-size: 15px;
+    color: grey;
+}
+
+.editbutton {
+    background-color: white;
+    border: none;
+    margin-right: 5px;
+}
+
+.deletebutton {
+    background-color: white;
+    border: none;
+}
+
+.createForm {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.formSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.shortInput {
+    width: 200px;
+}
+
+.greyBackground {
+    background-color: #f9fafb;
+}
+
+.border {
+    border: 1px solid #b8bbbe;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.fileButtonWidthFix {
+    width: 210px;
+}
+
+.postPage-postImageContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.postPage-image {
+    width: 50%;
+}
+
+.postPage-header {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.postPage-content {
+    padding: 40px;
+}
