@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, use } from 'react'
 import axios from 'axios'
 
 //using Link component instead of <a> tag doesnt cause the page to refresh and re-mount, but using <a> tag generates a refresh
@@ -12,6 +12,7 @@ import Post from './components/post'
 function Home() {
 
   const [posts, setPosts] = useState([])
+  const [search, setSearch] = useState("")
 
   async function getPosts() {
       axios.get("http://localhost:3049")
@@ -19,16 +20,34 @@ function Home() {
       .catch(e => console.error('Error:', error))
   }
 
+  
   useEffect(() => {
     getPosts()
   }, [])
+
+  function handleSearch(e) {
+    if (search.trim().length === 0) {
+      getPosts()
+    } 
+
+    const match = posts.filter((item) => {
+      const newTitle = item.title.toLowerCase()
+      return newTitle.includes(search.toLowerCase())
+    })
+
+    if (match.length === 0) {
+      alert("Matching post not found, please try again")
+    } else {
+      setPosts(match)
+    }
+  }
 
 
   return (
     <>
       <div className='inputcontainer'>
-        <input className='searchbar' type="text" placeholder='Search posts...'/>
-        <button className='buttonCSS'>Search</button>
+        <input className='searchbar' type="text" placeholder='Search posts...' value={search} onChange={(e) => setSearch(e.target.value)}/>
+        <button className='buttonCSS' onClick={handleSearch}>Search</button>
         <Link to="/create">
           <button className='buttonCSS'>Create Post</button>
         </Link>
