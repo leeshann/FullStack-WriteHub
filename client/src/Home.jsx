@@ -13,6 +13,7 @@ function Home() {
 
   const [posts, setPosts] = useState([])
   const [search, setSearch] = useState("")
+  const [found, setFound] = useState(true)
 
   async function getPosts() {
       axios.get("http://localhost:3049")
@@ -27,6 +28,7 @@ function Home() {
 
   function handleSearch(e) {
     if (search.trim().length === 0) {
+      setFound(true)
       getPosts()
     } 
 
@@ -36,8 +38,9 @@ function Home() {
     })
 
     if (match.length === 0) {
-      alert("Matching post not found, please try again")
+      setFound(false)
     } else {
+      setFound(true)
       setPosts(match)
     }
   }
@@ -52,6 +55,9 @@ function Home() {
           <button className='buttonCSS'>Create Post</button>
         </Link>
       </div>
+
+      {found ? null : <div className='titleNotFound'>Post not found</div>}
+
 
       <div className='postcontainer'>
         {posts.map((item) => {
