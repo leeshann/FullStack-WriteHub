@@ -157,3 +157,11 @@
 .postPage-content {
     padding: 40px;
 }
+
+.pageNotFound {
+    color: #3838c3;
+    /* background-color: red; */
+    margin-top: 250px;
+    display: flex;
+    justify-content: center;
+}

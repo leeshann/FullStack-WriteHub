@@ -1,5 +1,5 @@
 export default function PageNotFound() {
     return (
-        <div><h1>404 Page not found</h1></div>
+        <div className="pageNotFound"><h1>Oops! It looks like the page you're looking for doesn't exist!</h1></div>
     )
 }
